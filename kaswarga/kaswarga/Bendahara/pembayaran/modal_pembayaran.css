@@ -1,0 +1,319 @@
+/* ============ RESET ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+    color: #333;
+}
+
+/* ============ MODAL BESAR (HALAMAN UTAMA) ============ */
+.modal-main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 1000px;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 26px 30px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* Judul */
+.modal-box h2 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* ============ GROUP 2 KOLOM ============ */
+.iuran-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.iuran-box {
+    background: #f1f8f4;
+    border: 1px solid #d3d3d3;
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Judul kategori */
+.iuran-box h3 {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #000;
+}
+
+/* =================== TABEL =================== */
+.table-iuran {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+.table-iuran td {
+    padding: 9px 6px;
+    border-bottom: 1px solid #e4e7ec;
+}
+
+/* =================== BUTTONS =================== */
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Tombol edit */
+.btn {
+    padding: 7px 12px;
+    border-radius: 7px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.btn-warning {
+    background: #2d6a4f;
+    color: #fff;
+}
+
+.btn-warning:hover {
+    background: #25523e;
+}
+
+/* Tombol tambah */
+.btn-add {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border-radius: 999px;
+    background: #2d6a4f;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.87rem;
+    transition: 0.2s;
+}
+
+.btn-add:hover {
+    background: #25523e;
+    transform: translateY(-1px);
+}
+
+/* =================== FORM REKENING =================== */
+.bank-section label {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    display: block;
+}
+
+.bank-section input {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 8px;
+    border: 1px solid #d3d3d3;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    font-size: 0.92rem;
+}
+
+.bank-section input:focus {
+    outline: none;
+    border-color: #25523e;
+    box-shadow: 0 0 0 3px rgba(62, 63, 67, 0.25);
+}
+
+/* =================== QRIS =================== */
+.qris-section label {
+    font-size: 0.9rem;
+}
+
+.qris-section input[type="file"] {
+    margin-top: 6px;
+}
+
+/* =================== SIMPAN =================== */
+.btn-save-edit {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background: #2d6a4f;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-save-edit:hover {
+    background: #25523e;
+    transform: translateY(-1px);
+}
+
+/* ======================= MODAL EDIT ======================= */
+
+.modal-edit {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.modal-edit.show {
+    display: flex;
+}
+
+.edit-content {
+    background: #ffffff;
+    width: 95%;
+    max-width: 520px;
+    padding: 25px 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+    position: relative;
+    animation: popupFade 0.25s ease-out;
+}
+
+/* Animasi manis */
+@keyframes popupFade {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Judul */
+.edit-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #111827;
+}
+
+/* Tombol X */
+.close-edit {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #6b7280;
+    transition: 0.15s ease-in-out;
+}
+
+.close-edit:hover {
+    color: #111827;
+    transform: scale(1.1);
+}
+
+/* Label & input */
+.input-group {
+    margin-bottom: 12px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #374151;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 0.92rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    outline: none;
+    background: #f9fafb;
+    transition: all 0.2s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #25523e;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(62, 63, 67, 0.25);
+}
+
+/* Tombol simpan */
+.btn-save-edit {
+    width: 100px;
+    padding: 12px;
+    margin-top: 18px;
+    border-radius: 10px;
+    background: #2d6a4f;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-save-edit:hover {
+    background: #25523e;
+    box-shadow: 0 6px 18px rgba(13, 76, 57, 0.38);
+    transform: translateY(-1px);
+}
+
+.action-btns {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.btn-edit {
+    background: #1b5e20;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+}
+
+.btn-edit:hover {
+    background: #145317;
+}
+
+.btn-delete {
+    background: #c62828;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+}
+
+.btn-delete:hover {
+    background: #b71c1c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 760px) {
+    .iuran-container {
+        grid-template-columns: 1fr;
+    }
+}

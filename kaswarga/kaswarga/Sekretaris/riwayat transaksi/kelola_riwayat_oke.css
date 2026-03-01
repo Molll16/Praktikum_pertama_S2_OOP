@@ -1,0 +1,403 @@
+/* SIDEBAR CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap');
+
+@keyframes appear {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+* {
+    font-family: 'kadwa', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    animation: appear 0.3s linear;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: #1B4332;
+    transition: all 0.4s ease;
+}
+
+.sidebar.collapsed {
+    width: 70px;
+}
+
+.sidebar.collapsed~.container {
+    margin-left: 70px;
+}
+
+.sidebar .sidebar-header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 20px 15px;
+    justify-content: space-between;
+}
+
+.sidebar-header .header-logo img {
+    background-color: white;
+    height: 42px;
+    width: 42px;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.sidebar-header .sidebar-toggler {
+    position: absolute;
+    right: 15px;
+    height: 35px;
+    width: 35px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #eef2ff;
+    transition: 0.4s ease;
+}
+
+.sidebar-header .sidebar-toggler:hover {
+    background: #d9e1fd;
+}
+
+.sidebar.collapsed .sidebar-toggler {
+    transform: translate(-4px, 65px);
+}
+
+.sidebar-header .sidebar-toggler i {
+    font-size: 1.25rem;
+    transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-toggler i {
+    transform: rotate(180deg);
+}
+
+.sidebar-nav .nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 15px;
+    transform: translateY(15px);
+    transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-nav .primary-nav {
+    transform: translateY(65px);
+}
+
+.sidebar-nav .nav-item .nav-link {
+    color: white;
+    display: flex;
+    gap: 12px;
+    white-space: nowrap;
+    padding: 11px 10px;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #8D99AE;
+    transition: 0.4s ease;
+}
+
+.sidebar-nav .nav-link :where(.nav-label, .dropdown-icon) {
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .nav-link :where(.nav-label, .dropdown-icon) {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar-nav .nav-item:hover>.nav-link:not(.dropdown-title) {
+    color: #f1f1f1;
+    background: #2D6A4F;
+}
+
+/* Dropdown staylings*/
+
+.sidebar-nav .nav-item {
+    position: relative;
+}
+
+.sidebar-nav .dropdown-container .dropdown-icon {
+    margin: 0 -4px 0 auto;
+    transition: transform 0.4s ease, opacity 0.3s 0.2s ease;
+}
+
+.sidebar.collapsed .dropdown-container .dropdown-icon {
+    transition: opacity 0.3s 0s ease;
+}
+
+.sidebar-nav .dropdown-container.open .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.sidebar-nav .dropdown-menu {
+    height: 0;
+    overflow-y: hidden;
+    list-style: none;
+    padding-left: 20px;
+    transition: height 0.4s ease;
+}
+
+.sidebar.collapsed .dropdown-menu {
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    opacity: 0;
+    height: auto !important;
+    overflow-y: unset;
+    pointer-events: none;
+    background: #52734D;
+    padding: 7px 10px 7px 24px;
+    border-radius: 10px 20px 20px 10px;
+    transition: 0s;
+}
+
+.sidebar.collapsed .nav-item:hover .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(10px);
+    transition: 0.4s ease;
+}
+
+.dropdown-menu .nav-item .nav-link {
+    padding: 9px 15px;
+}
+
+.sidebar.collapsed .dropdown-menu .nav-link {
+    padding: 7px 15px;
+}
+
+.dropdown-menu .nav-item .dropdown-title {
+    display: none;
+}
+
+.sidebar.collapsed .dropdown-menu .nav-item .dropdown-title {
+    display: block;
+}
+
+/* ================== KELOLA RIWAYAT CSS ================== */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+    min-height: 100vh;
+    height: 100%;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.layout {
+    display: flex;
+    justify-content: center;
+}
+
+/* CONTAINER */
+.container {
+    margin-top: 40px;
+    margin-left: 260px;
+    width: 100%;
+    max-width: 1100px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 18px;
+    transition: margin-left 0.35s ease;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* JUDUL */
+h2 {
+    margin: 0 0 20px 0;
+    color: #1b5e20;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* DROPDOWN TAHUN */
+select {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 2px solid #a5d6a7;
+    background: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    float: right;
+    outline: none;
+    transition: .2s ease;
+}
+
+select:hover {
+    border-color: #66bb6a;
+}
+
+/* TABEL */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* biar halus di HP */
+}
+
+.arsip-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 60px;
+    font-size: 15px;
+}
+
+/* HEADER */
+.arsip-table th {
+    text-align: center;
+    padding: 14px;
+    background: linear-gradient(to bottom, #2D6A4F, #40916C);
+    color: #f1f8f4;
+    font-weight: 700;
+    font-size: 17px;
+    border: 1px solid #cce3d4;
+}
+
+/* ISI */
+.arsip-table td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e5e5;
+    color: #2b2b2b;
+}
+
+/* STRIPING */
+.arsip-table tr:nth-child(even) {
+    background: #fcfffd;
+}
+
+/* JUMLAH */
+.arsip-table td:nth-child(3) {
+    font-weight: 600;
+    color: #1b4332;
+}
+
+/* LINK BUKTI */
+.arsip-table a {
+    color: #FFFF;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        width: 92%;
+        padding: 20px;
+    }
+
+    select {
+        float: none;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+}
+.arsip-table td:last-child {
+    white-space: nowrap;
+}
+
+.btn-acc,
+.btn-rej,
+.btn-view {
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+}
+
+
+.btn-acc { background: #2d6a4f; }
+.btn-rej { background: #d9534f; }
+.btn-view { background: #6c757d;}
+
+.btn-acc:hover,
+.btn-rej:hover,
+.btn-view:hover {
+    opacity: 0.9;
+}
+
+/* MOBILE SIDEBAR MODE */
+@media (max-width: 768px) {
+
+    /* Sidebar tertutup default di HP */
+    .sidebar {
+        left: -260px;
+        width: 260px;
+        z-index: 1000;
+    }
+
+    /* Jika sidebar dibuka */
+    .sidebar.open {
+        left: 0;
+    }
+
+    /* Tombol toggle selalu terlihat */
+    .sidebar-header .sidebar-toggler {
+        position: absolute;
+        right: -45px;
+        top: 20px;
+        z-index: 1500;
+    }
+
+    /* Konten geser saat sidebar dibuka */
+    .container {
+        margin-left: 0 !important;
+        transition: 0.4s ease;
+    }
+
+    body.sidebar-open .container {
+        filter: brightness(0.5);
+        pointer-events: none;
+    }
+}
+
+/* Desktop mode */
+@media (min-width: 769px) {
+    .sidebar {
+        left: 0;
+    }
+}
+
+/* Grafik jadi 1 kolom di HP */
+@media (max-width: 768px) {
+
+    .chart-wrapper {
+        flex-direction: column;
+    }
+
+    .chart-grid {
+        grid-template-columns: 1fr;
+        /* 1 kolom */
+        grid-template-rows: auto;
+    }
+
+    .chart-box {
+        width: 100%;
+    }
+
+    /* Pie chart juga ikut turun */
+    .chart-box.pie {
+        width: 100%;
+        margin-top: 15px;
+    }
+}

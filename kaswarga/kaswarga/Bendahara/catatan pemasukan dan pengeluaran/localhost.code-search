@@ -1,0 +1,39 @@
+# Query: localhost
+# ContextLines: 1
+
+7 results - 7 files
+
+kaswarga/Bendahara/catatan pemasukan dan pengeluaran/catatan pemasukan dan pengeluaran.php:
+  1  <?php
+  2: $koneksi = mysqli_connect("localhost", "kaswarga", "#FuadBerax67", "kaswarga");
+  3  
+
+kaswarga/Bendahara/catatan pemasukan dan pengeluaran/get catatan.php:
+  1  <?php
+  2: $koneksi = mysqli_connect("localhost","kaswarga","#FuadBerax67","kaswarga");
+  3  
+
+kaswarga/Bendahara/catatan pemasukan dan pengeluaran/proses_transaksi.php:
+  1  <?php
+  2: $koneksi = mysqli_connect("localhost", "kaswarga", "#FuadBerax67", "kaswarga");
+  3  
+
+kaswarga/Bendahara/catatan pemasukan dan pengeluaran/update catatan.php:
+  1  <?php
+  2: $koneksi = mysqli_connect("localhost","kaswarga","#FuadBerax67","kaswarga");
+  3  
+
+kaswarga/Bendahara/Laporan/history.php:
+  1  <?php
+  2: $koneksi = mysqli_connect("localhost", "kaswarga", "#FuadBerax67", "kaswarga");
+  3  
+
+kaswarga/Database/koneksi.php:
+  1  <?php
+  2: $host = "localhost";
+  3  $user = "kaswarga";
+
+kaswarga/landing page/process_landingpage.php:
+  1  <?php
+  2: $koneksi = mysqli_connect("localhost", "kaswarga", "#FuadBerax67", "kaswarga");
+  3  

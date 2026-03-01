@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap');
+
+/* Gaya Dasar */
+body {
+    font-family: kadwa;
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+    margin: 0;
+    min-height: 100vh;
+}
+/* Modal Backdrop (untuk efek gelap di belakang form) */
+.modal-backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparan hitam */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Konten Modal (Kotak Form) */
+.modal-content {
+    background-color: #F3F3F3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px; /* Lebar maksimum form */
+}
+h1 {
+    background: linear-gradient(135deg, #2D6A4F, #40916C);
+    margin-top: 0;
+    padding: 10px;
+    border-bottom: 1px solid black;
+    color: white;
+    font-family: kadwa;
+    border-radius: 8px;
+}
+
+/* Bagian Transaksi Data */
+h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: black;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    font-family: kadwa;
+}
+
+/* Gaya Form */
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+input[type="date"],
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* agar padding tidak menambah lebar */
+}
+
+/* Gaya untuk File Upload */
+.file-upload {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Tombol Submit */
+
+.btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-back,
+.btn-submit {
+    background: linear-gradient(135deg, #2D6A4F, #40916C);
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(45, 106, 79, 0.3);
+    color: white;
+    cursor: pointer;
+}
+
+.btn-back:hover,
+.btn-submit:hover {
+    background: linear-gradient(135deg, #1B4332, #2D6A4F);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(45, 106, 79, 0.4);
+}
+
+
+
+@media (max-width: 768px) {
+
+    /* BODY */
+    body {
+        display: block;
+        min-height: 100vh;
+    }
+
+    /* BACKDROP */
+    .modal-backdrop {
+        align-items: flex-start;
+        padding: 30px 12px 80px;
+        /* ruang bawah */
+        overflow-y: auto;
+    }
+
+    /* MODAL: FIX condong ke kanan */
+    .modal-content {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+        padding: 16px 16px 28px;
+        border-radius: 16px;
+    }
+
+    /* INPUT */
+    input[type="date"],
+    input[type="number"],
+    input[type="text"],
+    select {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .btn {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-submit,
+    .btn-back {
+        width: 100%;
+        padding: 14px;
+        font-size: 1rem;
+        border-radius: 18px;
+    }
+}

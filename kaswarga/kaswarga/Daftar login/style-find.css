@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap');
+@keyframes appear {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+/* === RESET & BASE === */
+* {
+  box-sizing: border-box;
+  animation: appear 0.3s linear;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Kadwa', serif;
+}
+
+/* === BODY STYLE === */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 48px 20px;
+  background: url('../foto/perumahan.jpg') no-repeat center center / cover;
+}
+
+/* === CARD === */
+.card {
+  width: 660px;
+  max-width: 94%;
+  padding: 48px 60px;
+  border-radius: 18px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+}
+
+/* === HEADING === */
+.card h1 {
+  margin: 0 0 18px;
+  font-size: 28px;
+}
+
+/* === ICON === */
+.icon-wrap {
+  width: 84px;
+  height: 84px;
+  margin: 6px auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrap .magnifier {
+  width: 84px;
+  height: 84px;
+}
+
+/* === TEXT === */
+.lead {
+  color: #222;
+  margin: 0 0 18px;
+  font-size: 14px;
+}
+
+/* === FORM === */
+.find-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.input {
+  width: 320px;
+  max-width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+}
+
+/* === BUTTONS === */
+.btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-muted {
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.btn-primary {
+  background: #caa689;
+  color: #fff;
+  border: 2px solid #b38b67;
+}
